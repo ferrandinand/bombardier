@@ -449,7 +449,7 @@ func (b *bombardier) disableOutput() {
 	b.bar.NotPrint = true
 }
 
-func main() {
+func Start() {
 	cfg, err := parser.parse(os.Args)
 	if err != nil {
 		fmt.Println(err)
