@@ -38,7 +38,7 @@ besides those described in aforementioned documentation, namely:
 		Generates UUID Version 5, based on SHA-1 hashing (RFC 4122)
 
 The structure that gets passed to the template is documented in
-the package github.com/codesenberg/bombardier/internal. The structure
+the package github.com/ferrandinand/bombardier/internal. The structure
 of interest is TestInfo. It basically consists of Spec and Result
 fields, the former contains various information about the test
 (number of connections, URL, HTTP method, headers, body, rate, etc.)
@@ -46,9 +46,9 @@ performed, while the latter contains results obtained during the
 execution of this test (bytes read/written, time taken, RPS, etc.).
 
 Link to GoDoc for the structure used in template:
-https://godoc.org/github.com/codesenberg/bombardier/internal#TestInfo
+https://godoc.org/github.com/ferrandinand/bombardier/internal#TestInfo
 
 Examples of templates can be found in:
-https://github.com/codesenberg/bombardier/blob/master/templates.go
+https://github.com/ferrandinand/bombardier/blob/master/templates.go
 */
 package template

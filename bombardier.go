@@ -12,7 +12,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/codesenberg/bombardier/internal"
+	"github.com/ferrandinand/bombardier/internal"
 
 	"github.com/cheggaaa/pb"
 	fhist "github.com/codesenberg/concurrent/float64/histogram"
@@ -60,7 +60,7 @@ type bombardier struct {
 }
 
 func NewBombardier(c config) (*bombardier, error) {
-	b, err := newBombardier(config)
+	b, err := newBombardier(c)
 	return b, err
 }
 

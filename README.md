@@ -1,5 +1,5 @@
-# bombardier [![Build Status](https://semaphoreci.com/api/v1/codesenberg/bombardier/branches/master/shields_badge.svg)](https://semaphoreci.com/codesenberg/bombardier) [![Go Report Card](https://goreportcard.com/badge/github.com/codesenberg/bombardier)](https://goreportcard.com/report/github.com/codesenberg/bombardier) [![GoDoc](https://godoc.org/github.com/codesenberg/bombardier?status.svg)](http://godoc.org/github.com/codesenberg/bombardier)
-![Logo](https://raw.githubusercontent.com/codesenberg/bombardier/master/img/logo.png)
+# bombardier [![Build Status](https://semaphoreci.com/api/v1/ferrandinand/bombardier/branches/master/shields_badge.svg)](https://semaphoreci.com/ferrandinand/bombardier) [![Go Report Card](https://goreportcard.com/badge/github.com/ferrandinand/bombardier)](https://goreportcard.com/report/github.com/ferrandinand/bombardier) [![GoDoc](https://godoc.org/github.com/ferrandinand/bombardier?status.svg)](http://godoc.org/github.com/ferrandinand/bombardier)
+![Logo](https://raw.githubusercontent.com/ferrandinand/bombardier/master/img/logo.png)
 bombardier is a HTTP(S) benchmarking tool. It is written in Go programming language and uses excellent [fasthttp](https://github.com/valyala/fasthttp) instead of Go's default http library, because of its lightning fast performance. 
 
 With `bombardier v1.1` and higher you can now use `net/http` client if you need to test HTTP/2.x services or want to use a more RFC-compliant HTTP client.
@@ -7,25 +7,25 @@ With `bombardier v1.1` and higher you can now use `net/http` client if you need 
 Tested on go1.8 and higher.
 
 ## Installation
-You can grab binaries in the [releases](https://github.com/codesenberg/bombardier/releases) section.
+You can grab binaries in the [releases](https://github.com/ferrandinand/bombardier/releases) section.
 Alternatively, to get latest and greatest run:
 
-Go 1.17+: `go install github.com/codesenberg/bombardier@latest`
+Go 1.17+: `go install github.com/ferrandinand/bombardier@latest`
 
-Older versions: `go get -u github.com/codesenberg/bombardier`
+Older versions: `go get -u github.com/ferrandinand/bombardier`
 
 ## Usage
 ```
 bombardier [<flags>] <url>
 ```
 
-For a more detailed information about flags consult [GoDoc](http://godoc.org/github.com/codesenberg/bombardier).
+For a more detailed information about flags consult [GoDoc](http://godoc.org/github.com/ferrandinand/bombardier).
 
 ## Known issues
 AFAIK, it's impossible to pass Host header correctly with `fasthttp`, you can use `net/http`(`--http1`/`--http2` flags) to workaround this issue.
 
 ## Examples
-Example of running `bombardier` against [this server](https://godoc.org/github.com/codesenberg/bombardier/cmd/utils/simplebenchserver):
+Example of running `bombardier` against [this server](https://godoc.org/github.com/ferrandinand/bombardier/cmd/utils/simplebenchserver):
 ```
 > bombardier -c 125 -n 10000000 http://localhost:8080
 Bombarding http://localhost:8080 with 10000000 requests using 125 connections
