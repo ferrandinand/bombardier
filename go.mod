@@ -9,6 +9,7 @@ require (
 	github.com/andybalholm/brotli v1.0.1 // indirect
 	github.com/cheggaaa/pb v1.0.29
 	github.com/codesenberg/concurrent v0.0.0-20180531114123-64560cfcf964
+	github.com/ferrandinand/bombardier v1.2.5
 	github.com/juju/ratelimit v1.0.1
 	github.com/klauspost/compress v1.11.8 // indirect
 	github.com/satori/go.uuid v1.2.0
