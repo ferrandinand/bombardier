@@ -12,7 +12,7 @@ import (
 	"text/template"
 	"time"
 
-	"github.com/ferrandinand/bombardier/internal"
+	"github.com/ferrandinand/bombardier/tools"
 
 	"github.com/cheggaaa/pb"
 	fhist "github.com/codesenberg/concurrent/float64/histogram"
@@ -365,9 +365,9 @@ func (b *bombardier) printIntro() {
 	}
 }
 
-func (b *bombardier) gatherInfo() internal.TestInfo {
-	info := internal.TestInfo{
-		Spec: internal.Spec{
+func (b *bombardier) gatherInfo() tools.TestInfo {
+	info := tools.TestInfo{
+		Spec: tools.Spec{
 			NumberOfConnections: b.conf.numConns,
 
 			Method: b.conf.method,
@@ -381,11 +381,11 @@ func (b *bombardier) gatherInfo() internal.TestInfo {
 
 			Stream:     b.conf.stream,
 			Timeout:    b.conf.timeout,
-			ClientType: internal.ClientType(b.conf.clientType),
+			ClientType: tools.ClientType(b.conf.clientType),
 
 			Rate: b.conf.rate,
 		},
-		Result: internal.Results{
+		Result: tools.Results{
 			BytesRead:    b.bytesRead,
 			BytesWritten: b.bytesWritten,
 			TimeTaken:    b.timeTaken,
@@ -403,7 +403,7 @@ func (b *bombardier) gatherInfo() internal.TestInfo {
 	}
 
 	testType := b.conf.testType()
-	info.Spec.TestType = internal.TestType(testType)
+	info.Spec.TestType = tools.TestType(testType)
 	if testType == timed {
 		info.Spec.TestDuration = *b.conf.duration
 	} else if testType == counted {
@@ -413,7 +413,7 @@ func (b *bombardier) gatherInfo() internal.TestInfo {
 	if b.conf.headers != nil {
 		for _, h := range *b.conf.headers {
 			info.Spec.Headers = append(info.Spec.Headers,
-				internal.Header{
+				tools.Header{
 					Key:   h.key,
 					Value: h.value,
 				})
@@ -422,7 +422,7 @@ func (b *bombardier) gatherInfo() internal.TestInfo {
 
 	for _, ewc := range b.errors.byFrequency() {
 		info.Result.Errors = append(info.Result.Errors,
-			internal.ErrorWithCount{
+			tools.ErrorWithCount{
 				Error: ewc.error,
 				Count: ewc.count,
 			})
