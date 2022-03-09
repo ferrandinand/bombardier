@@ -64,4 +64,4 @@ documentation for package github.com/ferrandinand/bombardier/template.
 Link (GoDoc):
 https://godoc.org/github.com/ferrandinand/bombardier/template
 */
-package main
+package bombardier
