@@ -59,6 +59,11 @@ type bombardier struct {
 	template *template.Template
 }
 
+func NewBombardier(c config) (*bombardier, error) {
+	b, err := newBombardier(config)
+	return b, err
+}
+
 func newBombardier(c config) (*bombardier, error) {
 	if err := c.checkArgs(); err != nil {
 		return nil, err
@@ -322,6 +327,10 @@ func (b *bombardier) recordRps() {
 
 	reqsf := float64(reqs) / duration.Seconds()
 	b.requests.Increment(reqsf)
+}
+
+func (b *bombardier) Bombard() {
+	b.bombard()
 }
 
 func (b *bombardier) bombard() {
