@@ -3,10 +3,10 @@ Command line utility bombardier is a fast cross-platform HTTP
 benchmarking tool written in Go.
 
 Installation with Go 1.17+:
-  go install github.com/codesenberg/bombardier@latest
+  go install github.com/ferrandinand/bombardier@latest
 
 Installation with older versions of Go:
-  go get -u github.com/codesenberg/bombardier
+  go get -u github.com/ferrandinand/bombardier
 
 Usage:
   bombardier [<flags>] <url>
@@ -60,8 +60,8 @@ Args:
   <url>  Target's URL
 
 For detailed documentation on user-defined templates see
-documentation for package github.com/codesenberg/bombardier/template.
+documentation for package github.com/ferrandinand/bombardier/template.
 Link (GoDoc):
-https://godoc.org/github.com/codesenberg/bombardier/template
+https://godoc.org/github.com/ferrandinand/bombardier/template
 */
-package main
+package bombardier

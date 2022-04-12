@@ -1,4 +1,4 @@
-package main
+package bombardier
 
 import (
 	"bytes"
@@ -85,7 +85,7 @@ func TestHTTP2Client(t *testing.T) {
 		errChan <- err
 	}()
 
-	// TODO(codesenberg): this should be fixed later
+	// TODO(ferrandinand): this should be fixed later
 	time.Sleep(100 * time.Millisecond)
 	bytesRead, bytesWritten := int64(0), int64(0)
 	c := newHTTPClient(&clientOpts{
